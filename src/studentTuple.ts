@@ -6,7 +6,9 @@
  * 輸入: ['Alice', 85]
  * 輸出: 'Alice: 85%'
  */
-
-export function printStudentInfo(student) {
-    // 在此實現函式
+type Student = [string, number];
+export function printStudentInfo(student: Student): string {
+  // 在此實現函式
+  const [name, age] = student;
+  return `${name}: ${age}%`;
 }

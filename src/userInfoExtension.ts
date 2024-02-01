@@ -1,11 +1,11 @@
 interface BasicUserInfo {
-    name: string;
-    age: number;
+  name: string;
+  age: number;
 }
 
 interface AddressInfo {
-    street: string;
-    city: string;
+  street: string;
+  city: string;
 }
 
 /**
@@ -32,6 +32,14 @@ interface AddressInfo {
  * @param user - 一個物件，包含使用者的基本資訊和地址資訊
  * @returns - 回傳一個物件，表示合併後的使用者資訊
  */
+type User = {
+  name: string;
+  age: number;
+  street: string;
+  city: string;
+}
+type FullUserInfo = Record<string, User>;
 export function createFullUserInfo(user: FullUserInfo): FullUserInfo {
-    // 請在此處寫下你的程式碼
+  // 請在此處寫下你的程式碼
+  return user;
 }
