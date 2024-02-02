@@ -61,14 +61,4 @@ fetchData('https://jsonplaceholder.typicode.com/todos/1')
     console.error(error);
   });
 
-
-// 使用範例
-fetchData('https://jsonplaceholder.typicode.com/todos/1')
-  .then(data => {
-    console.log(data);
-  })
-  .catch(error => {
-    console.error(error);
-  });
-
 export { fetchData };
