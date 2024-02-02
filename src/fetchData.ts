@@ -26,6 +26,41 @@ async function fetchData(url: string): Promise<Todo> {
     return await Promise.reject(error);
   }
 }
+interface Todo {
+  userId: number;
+  id: number;
+  title: string;
+  completed: boolean;
+}
+
+// 使用 resolve, reject
+// async function fetchData(url: string): Promise<Todo> {
+//   return new Promise<Todo>((resolve, reject) => {
+//     fetch(url)
+//       .then(response => {
+//         if (!response.ok) {
+//           throw new Error(`Error: ${response.status} ${response.statusText}`);
+//         }
+//         return response.json();
+//       })
+//       .then(data => {
+//         resolve(data as Todo);
+//       })
+//       .catch(error => {
+//         reject(error);
+//       });
+//   });
+// }
+
+// 使用範例
+fetchData('https://jsonplaceholder.typicode.com/todos/1')
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.error(error);
+  });
+
 
 // 使用範例
 fetchData('https://jsonplaceholder.typicode.com/todos/1')
